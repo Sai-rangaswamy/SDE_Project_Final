@@ -1,6 +1,6 @@
 # SDE_Project_Final:
 
-So basically this is my readme file and if you read through this file you'll
+So basically this is my readme file and if you read through this file you'll understand what my idea is and what are my intension and i would have been able to build this much more better way if i had used the time more wisely but here we are i have built this.. Thank you for giving me this opp.
 
 The Issue:
   Right now, hardworking blue-collar workers struggle to find consistent jobs, while project owners struggle to find reliable labor. The current ecosystem relies almost entirely on word-of-mouth, paper attendance tracking, and delayed cash payments.
