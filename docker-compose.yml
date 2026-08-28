@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: buildgig_db
+    restart: always
+    environment:
+      POSTGRES_USER: buildgig_user
+      POSTGRES_PASSWORD: buildgig_password
+      POSTGRES_DB: buildgig_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - buildgig_pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: buildgig_api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_USER: buildgig_user
+      POSTGRES_PASSWORD: buildgig_password
+      POSTGRES_DB: buildgig_db
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    depends_on:
+      - db
+    volumes:
+      - .:/app # Maps local directory so auto-reload works!
+
+volumes:
+  buildgig_pgdata:
